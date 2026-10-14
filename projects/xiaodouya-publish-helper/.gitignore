@@ -1,0 +1,17 @@
+investigation/recovered/
+investigation/frames/
+investigation/fixture.mp4
+build/
+deliverables/
+__pycache__/
+.env
+.env.*
+*.key
+*.pem
+drafts*.json
+account-bindings*.json
+sentence-ai*.json
+diagnostics/
+*.zip
+*.exe
+*.mp4

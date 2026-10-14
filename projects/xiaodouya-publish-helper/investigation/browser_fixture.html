@@ -1,0 +1,28 @@
+<!doctype html><meta charset="utf-8"><title>PublishHelper isolated verification</title>
+<style>body{font:18px sans-serif}#editor{border:1px solid #aaa;min-height:80px;width:600px}video{width:160px;height:90px}.suggest{padding:10px;background:#eee}</style>
+<input id="upload" type="file" accept="video/*">
+<input placeholder="填写作品标题，为作品获得更多流量">
+<div id="editor" data-slate-editor="true" contenteditable="true"></div>
+<div class="suggest" id="candidates"></div><video muted></video>
+<script>
+window.fixtureNonce='isolated-publish-verification';window.inputCount=0;
+const editor=document.querySelector('#editor'),box=document.querySelector('#candidates');
+document.querySelector('#upload').onchange=async e=>{
+ window.inputCount++;
+ const video=document.querySelector('video');video.src=URL.createObjectURL(e.target.files[0]);
+ await video.play();video.pause();history.replaceState(null,'','/creator-micro/content/post/video');
+};
+editor.addEventListener('input',()=>{
+ box.replaceChildren();const match=editor.textContent.match(/\s#([^#]+)$/);if(!match)return;
+ const topic=match[1].trim();if(!topic)return;
+ const candidate=document.createElement('span');candidate.className='tag-hash-view-name-fixture';candidate.textContent=topic;
+ candidate.onclick=()=>{
+  const walker=document.createTreeWalker(editor,NodeFilter.SHOW_TEXT);let node,last;while(node=walker.nextNode())last=node;
+  if(!last||!last.textContent.endsWith('#'+topic))throw Error('fixture mismatch');
+  last.textContent=last.textContent.slice(0,-topic.length-1);
+  const mention=document.createElement('span');mention.dataset.mention='#';mention.contentEditable='false';mention.textContent='#'+topic;
+  last.after(mention,document.createTextNode(' '));box.replaceChildren();
+ };
+ box.append(candidate);
+});
+</script>

@@ -1,0 +1,49 @@
+<!doctype html><meta charset="utf-8"><title>Isolated account inventory verification</title>
+<style>#scroll{height:500px;overflow:auto;width:320px}.ant-tree-treenode{min-height:28px}.ant-tree-switcher{display:block;height:28px}dd{height:42px;margin:0;padding:2px}span{display:inline-block}</style>
+<div id="scroll"><div id="dashboard-account-list"></div></div>
+<script>
+window.setupAccounts=(groups,duplicate=false,delay=0)=>{
+ const root=document.querySelector('#dashboard-account-list');root.innerHTML='';
+ for(let i=0;i<groups;i++){
+  const group=document.createElement('div');group.className='ant-tree-treenode ant-tree-treenode-switcher-close';group.dataset.key='group-'+i;
+  const button=document.createElement('button');button.className='ant-tree-switcher';button.textContent='测试分组'+i;
+  group.append(button);root.append(group);
+  button.onclick=()=>{
+   if(!group.classList.contains('ant-tree-treenode-switcher-close'))return;
+   if(group.dataset.pending)return;
+   group.dataset.pending='yes';group.setAttribute('aria-busy','true');
+   setTimeout(()=>{
+   group.classList.remove('ant-tree-treenode-switcher-close');
+   for(let j=0;j<2;j++){
+    const row=document.createElement('dd');row.className='_accountItem_fixture';row.dataset.accountId=i+'-'+j;
+    const name=document.createElement('span');name.dataset.accountName=duplicate?'同名账号':'测试账号'+i+'-'+j;name.textContent=name.dataset.accountName;
+    const platform=document.createElement('span');platform.textContent='抖音';row.append(name,platform);group.append(row);
+   }
+   group.removeAttribute('aria-busy');delete group.dataset.pending;
+   },delay);
+  };
+ }
+ document.querySelector('#scroll').scrollTop=150;
+};
+window.setupProgressive=(rootBusy=false)=>{
+ const root=document.querySelector('#dashboard-account-list');root.innerHTML='';root.style='';
+ const busy=document.createElement('div');busy.setAttribute('aria-busy','true');busy.textContent='加载中';root.append(busy);
+ if(rootBusy){busy.removeAttribute('aria-busy');root.setAttribute('aria-busy','true');}
+ const add=(from,to)=>{for(let i=from;i<to;i++){
+  const row=document.createElement('dd');row.dataset.accountId='progress-'+i;row.className='_accountItem_fixture';
+  row.innerHTML='<span data-account-name="递增账号'+i+'">递增账号'+i+'</span><span>抖音</span>';root.append(row);
+ }};
+ add(0,18);setTimeout(()=>add(18,20),rootBusy?4000:900);setTimeout(()=>{add(20,23);busy.remove();root.removeAttribute('aria-busy');},rootBusy?6000:1800);
+};
+window.setupVirtual=(count)=>{
+ const root=document.querySelector('#dashboard-account-list'),scroll=document.querySelector('#scroll');
+ root.style='height:'+count*50+'px;position:relative';
+ const render=()=>{
+  root.innerHTML='';const start=Math.max(0,Math.floor(scroll.scrollTop/50)-1);
+  for(let i=start;i<Math.min(count,start+13);i++){
+   const row=document.createElement('dd');row.dataset.accountId='virtual-'+i;row.className='_accountItem_fixture';row.style='position:absolute;top:'+i*50+'px';
+   row.innerHTML='<span data-account-name="虚拟账号'+i+'">虚拟账号'+i+'</span><span>抖音</span>';root.append(row);
+  }
+ };scroll.onscroll=render;scroll.scrollTop=150;render();
+};
+</script>

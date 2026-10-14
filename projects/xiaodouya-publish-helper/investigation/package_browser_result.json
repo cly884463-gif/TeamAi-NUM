@@ -1,0 +1,23 @@
+{
+  "package": "新材联发布助手_v0.5.44-r13_账号加载验收修正版.zip",
+  "actual_components": [
+    "delivered PYZ modules",
+    "bundled websocket-client",
+    "Chrome CDP",
+    "file input and SHA256",
+    "blob video preview",
+    "contenteditable insertion and topic DOM readback"
+  ],
+  "fixture_limitations": "Local synthetic HTML, not real Douyin Slate editor or Xiaodouya account navigation.",
+  "description": "厨房翻新测试文案 #厨房翻新 #本地装修",
+  "topics": [
+    "#厨房翻新",
+    "#本地装修"
+  ],
+  "upload_count": 1,
+  "existing_content_protected": true,
+  "real_timeout_classified": true,
+  "no_replay_after_timeout": true,
+  "real_disconnect_classified": true,
+  "live_platform_verified": false
+}

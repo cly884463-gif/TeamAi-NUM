@@ -1,0 +1,10 @@
+{
+  "browser": "155.0.8059.40",
+  "realBlobPreview": {
+    "before": 0,
+    "after": 1
+  },
+  "simulatedBoundaryCases": 8,
+  "multipleRealPreviews": 2,
+  "livePlatformTest": false
+}
