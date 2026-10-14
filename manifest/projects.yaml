@@ -1,0 +1,14 @@
+version: 1
+projects:
+  - id: astra
+    name: ASTRA
+    description: ""
+    resources:
+      knowledge:
+        - astra
+      skills:
+        - astra
+      learnings:
+        - astra
+      agents:
+        - astra
