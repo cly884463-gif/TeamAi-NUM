@@ -1,39 +1,47 @@
 version: 2
 votes:
   astra\旧改实拍剪辑-信息职责-动作匹配与声画编排-2026-10-15-q4njxj:
-    recalled_count: 30
+    recalled_count: 42
     upvoted_count: 0
-    last_recalled_at: 2026-10-28T06:11:53.596Z
+    last_recalled_at: 2026-11-03T07:20:07.182Z
   astra-overview:
     recalled_count: 11
     upvoted_count: 0
     last_recalled_at: 2026-10-24T06:05:12.533Z
   astra\旧改剪辑的视线接力与空间连续-条件及验收-2026-10-15-3qzepu:
-    recalled_count: 18
-    upvoted_count: 0
-    last_recalled_at: 2026-10-28T06:11:53.596Z
-  astra\旧改动作连续剪辑-动作阶段-接触状态与切点复核-2026-10-15-qofx7q:
     recalled_count: 26
     upvoted_count: 0
-    last_recalled_at: 2026-10-28T06:11:53.596Z
+    last_recalled_at: 2026-11-03T07:20:07.182Z
+  astra\旧改动作连续剪辑-动作阶段-接触状态与切点复核-2026-10-15-qofx7q:
+    recalled_count: 39
+    upvoted_count: 0
+    last_recalled_at: 2026-11-03T07:20:07.182Z
   astra\旧改时间压缩与工序表达-省略内容和真实性检查-2026-10-15-0eqtbk:
     recalled_count: 5
     upvoted_count: 0
     last_recalled_at: 2026-10-21T05:58:34.297Z
   astra\旧改视频完整剪辑执行流程-2026-10-16确认-2026-10-16-30k9y5:
-    recalled_count: 22
+    recalled_count: 29
     upvoted_count: 0
-    last_recalled_at: 2026-10-27T06:04:53.640Z
+    last_recalled_at: 2026-11-03T07:05:29.124Z
   astra\剪映关键词动效与音效时间对齐-三种时长及落点检查-2026-10-16-7d3cbr:
-    recalled_count: 19
+    recalled_count: 28
     upvoted_count: 0
-    last_recalled_at: 2026-10-28T06:11:53.596Z
+    last_recalled_at: 2026-11-03T07:20:07.182Z
   astra\剪映专业版关键词智能划重点的字幕来源边界与验证-2026-10-17-fpg0q9:
-    recalled_count: 7
+    recalled_count: 12
     upvoted_count: 0
-    last_recalled_at: 2026-10-28T06:11:59.563Z
+    last_recalled_at: 2026-11-02T07:01:28.041Z
   astra\剪映音乐节拍标记与变速节点-非关键过渡的候选对齐方法-2026-10-24-q0hi0l:
-    recalled_count: 6
+    recalled_count: 12
     upvoted_count: 0
-    last_recalled_at: 2026-10-28T06:11:53.596Z
+    last_recalled_at: 2026-11-02T07:01:28.041Z
+  astra\旧改实拍镜头镜像翻转的方向与证据核验-2026-10-31-ey43dm:
+    recalled_count: 4
+    upvoted_count: 0
+    last_recalled_at: 2026-11-03T07:05:29.124Z
+  astra\连续主体切镜-角度与运动匹配复核-2026-11-03-81j9m5:
+    recalled_count: 1
+    upvoted_count: 0
+    last_recalled_at: 2026-11-03T07:20:07.182Z
 deltas: {}
